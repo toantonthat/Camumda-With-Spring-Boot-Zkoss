@@ -1,0 +1,4 @@
+<?page title="Index Page" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window title="Index Page" border="normal">Index Page</window>
+</zk>
