@@ -14,6 +14,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter {
 	 */
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
+		System.out.println("@@@@@@");
 		registry.addRedirectViewController("/", "index.zul");
 	}
 }
