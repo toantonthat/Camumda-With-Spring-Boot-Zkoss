@@ -1,4 +1,38 @@
 <?page title="Index Page" contentType="text/html;charset=UTF-8"?>
-<zk>
-	<window title="Index Page" border="normal">Index Page</window>
-</zk>
+<window xmlns:n="native" xmlns:x="xhtml" xmlns:zk="zk"
+	apply="org.zkoss.bind.BindComposer" id="wdn" border="normal"
+	mode="modal" action="show: slideIn" contentStyle="overflow:auto;"
+	title="Process Service"
+	viewModel="@id('vm') @init('com.toantt.camunda.service.ProcessService')"
+	width="500px">
+
+	<div class="row box-body">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="form-group">
+						<x:label>Điểm môn Toán : </x:label>
+						<textbox class="form-control" value="@load(vm.diemToan) @save(vm.diemToan, before={'doAction'})"/>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="form-group">
+						<x:label>Điểm môn Lý : </x:label>
+						<textbox class="form-control" value="@load(vm.diemLy) @save(vm.diemLy, before={'doAction'})"/>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="form-group">
+						<x:label>Điểm môn Hóa : </x:label>
+						<textbox class="form-control" value="@load(vm.diemHoa) @save(vm.diemHoa, before={'doAction'})"/>
+					</div>
+				</div>
+			</div>
+			<div class="row box-footer">	
+				<x:button class="btn btn-default"  onClick="@command('doAction')">
+					<n:i ></n:i> Đồng ý
+				</x:button>	
+			</div>
+		</div>
+	</div>
+</window>
